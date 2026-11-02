@@ -1,0 +1,473 @@
+/* Lyra visual theme, adapted to the academic template's Bulma markup. */
+:root {
+  color-scheme: dark;
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --dark-background: #0d0d0d;
+  --text-color: #e0e0e0;
+  --heading-color: #f0f0f0;
+  --subtle-text-color: #a0a0a0;
+  /* Change this one value to recolor buttons, links, focus rings, and glow. */
+  --accent-color: #FFE4C4;
+  --gradient-start: #8a7ff8;
+  --gradient-end: #4d90fe;
+  --primary-color: var(--accent-color);
+  --primary-hover: color-mix(in srgb, var(--accent-color), white 20%);
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-light: #a0a0a0;
+  --background-primary: #0d0d0d;
+  --background-secondary: #141414;
+  --background-accent: #1a1a1a;
+  --border-color: #333;
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 30%);
+  --shadow-lg: 0 10px 30px rgb(0 0 0 / 50%);
+  --shadow-xl: var(--shadow-lg);
+  --transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+html { background: var(--dark-background); scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--dark-background);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select, textarea { font-family: inherit; }
+pre, code { font-family: var(--font-family-mono); }
+a { color: var(--accent-color); transition: var(--transition); }
+a:hover { color: #fff; }
+strong, .content strong { color: var(--heading-color); }
+.container, .container.is-max-desktop { width: 100%; max-width: 1200px; min-width: 0; margin-inline: auto; }
+.column { min-width: 0; }
+.hero { background: var(--dark-background); }
+.hero.is-light { background: var(--dark-background); color: var(--text-color); }
+.hero-body, .hero.is-small .hero-body, .section { padding: 3rem 1.5rem; }
+.publication-header .hero-body { padding-top: 7rem; padding-bottom: 1rem; }
+.publication-header .container { max-width: 1000px; }
+.title, .subtitle, .content h1, .content h2, .content h3 { color: var(--heading-color); }
+.title, .content h2 { text-align: center; font-weight: 700; line-height: 1.2; }
+.publication-title.title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  overflow-wrap: anywhere;
+}
+.title.is-3, h2.title { font-size: clamp(1.8rem, 3.7vw, 2.8rem); margin-bottom: 1.5rem; }
+.publication-authors { margin-bottom: 1rem; color: var(--subtle-text-color); }
+.publication-authors a { color: var(--text-color); font-weight: 500; }
+.publication-authors a:hover { color: var(--accent-color); }
+.author-block { display: inline-block; margin-inline: .25rem; }
+.eql-cntrb { display: block; font-size: .875rem; color: var(--subtle-text-color); }
+.publication-venue { color: var(--accent-color); }
+.publication-awards { color: var(--accent-color); font-weight: 700; }
+.publication-links { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+.link-block { display: flex; }
+.button.is-dark {
+  background: var(--accent-color);
+  color: var(--button-text-color, #000);
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  padding: .65rem 1.25rem;
+  height: auto;
+  min-height: 44px;
+  font-weight: 500;
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.button.is-dark:hover,
+.copy-bibtex-btn:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent-color) 50%, transparent);
+}
+.teaser .hero-body { padding-top: 1rem; padding-bottom: 2rem; }
+.teaser .container { max-width: 902px; }
+video, img { max-width: 100%; height: auto; }
+video { display: block; width: 100%; background: #000; border-radius: 16px; }
+.teaser video, .publication-banner { box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; }
+.teaser .subtitle, .results-carousel .subtitle { color: var(--subtle-text-color); font-size: 1rem; line-height: 1.6; margin: 1rem auto 0; }
+.content.has-text-justified { max-width: 900px; margin-inline: auto; color: var(--subtle-text-color); font-size: 1.1rem; line-height: 1.6; }
+.publication-video { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #000; box-shadow: var(--shadow-lg); }
+.publication-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+iframe { max-width: 100%; border: 1px solid var(--border-color); border-radius: 16px; }
+.results-carousel { overflow: hidden; padding: 0 0 2rem; }
+.results-carousel .item { margin: .5rem; padding: 0; overflow: hidden; border-radius: 16px; background: var(--dark-background); }
+.results-carousel .item img { display: block; width: 100%; border-radius: 16px; }
+.results-carousel .item video { width: 100%; height: auto; }
+.slider-navigation-previous, .slider-navigation-next { background: #1a1a1ae6; color: #fff; border: 1px solid #444; width: 44px; height: 44px; }
+.slider-pagination .slider-page { background: #444; width: 10px; height: 10px; }
+.slider-pagination .slider-page.is-active { background: var(--accent-color); }
+.bibtex-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.bibtex-header .title { margin: 0; }
+pre, .content pre { background: var(--background-accent); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; overflow-x: auto; font-size: .875rem; }
+code { background: var(--background-accent); color: var(--text-color); }
+.copy-bibtex-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--accent-color); color: #000; border: 1px solid var(--accent-color); border-radius: 999px; padding: .65rem 1rem; min-height: 44px; font: inherit; font-weight: 500; cursor: pointer; transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.copy-bibtex-btn.copied .copy-text::after { content: 'ied!'; }
+.footer { background: var(--dark-background); border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
+.footer .content { color: var(--subtle-text-color); font-size: .85rem; text-align: center; }
+.footer .icon-link { color: var(--subtle-text-color); font-size: 25px; }
+.scroll-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px; border: 1px solid var(--border-color); border-radius: 50%; background: var(--background-accent); color: var(--accent-color); cursor: pointer; opacity: 0; visibility: hidden; z-index: 999; transition: var(--transition); }
+.scroll-to-top.visible { opacity: 1; visibility: visible; }
+.dnerf { font-variant: small-caps; }
+:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
+
+/* More Works Dropdown */
+.more-works-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.more-works-btn {
+  background: rgba(13, 13, 13, .8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-family-body);
+}
+
+.more-works-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: rgba(13, 13, 13, .8);
+  border-color: var(--primary-color);
+}
+
+.more-works-btn .dropdown-arrow {
+  transition: var(--transition);
+  font-size: 0.8rem;
+}
+
+.more-works-btn.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.more-works-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 400px;
+  max-width: 90vw;
+  background: rgba(13, 13, 13, .8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.more-works-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: .5rem .75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background: var(--background-accent);
+  color: var(--text-primary);
+}
+
+.works-list {
+  padding: 1rem;
+}
+
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+.work-item:hover {
+  background: var(--background-accent);
+  transform: translateX(4px);
+}
+
+.work-info h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.work-info p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.work-venue {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.work-item .fas {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+
+
+/* Keep the fixed controls clear of content and each other at narrow widths. */
+@media (max-width: 768px) {
+  .hero-body, .hero.is-small .hero-body, .section { padding: 2rem 1.25rem; }
+  .publication-header .hero-body { padding-top: 6rem; padding-bottom: 1rem; }
+  .publication-authors.is-size-5 { font-size: 1rem !important; }
+  .content.has-text-justified { font-size: 1rem; text-align: left !important; }
+  .more-works-container { top: .75rem; right: 1rem; }
+  .more-works-btn { padding: .55rem .9rem; min-height: 44px; }
+  .more-works-dropdown { width: min(400px, calc(100vw - 2rem)); max-width: none; max-height: calc(100dvh - 5rem); }
+  .scroll-to-top { bottom: 1rem; right: 1rem; }
+  .teaser .hero-body { padding: 1rem 1.25rem; }
+}
+@media (max-width: 480px) {
+  .publication-links { gap: .5rem; }
+  .link-block { flex: 1 1 calc(50% - .5rem); min-width: 0; }
+  .link-block .button { width: 100%; padding: .65rem .75rem; font-size: .875rem; }
+  .bibtex-header { flex-wrap: wrap; }
+  .dropdown-header { padding: 1rem; }
+  .work-item { padding: .75rem; gap: .5rem; }
+  .work-info { min-width: 0; overflow-wrap: anywhere; }
+  pre, .content pre { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media print {
+  :root { color-scheme: light; }
+  body, .hero, .hero.is-light, .footer { background: #fff; color: #000; }
+  .title, .subtitle, .content, .publication-authors, .footer .content { color: #000; }
+  .publication-title.title { background: none; color: #000; }
+  .more-works-container, .scroll-to-top, .copy-bibtex-btn { display: none; }
+}
+
+/* Override Bulma's light-hero colors and the asynchronously loaded carousel skin. */
+.hero.is-light .title, .hero.is-light .subtitle { color: var(--heading-color); }
+.results-carousel .slider-navigation-previous,
+.results-carousel .slider-navigation-next { background: #1a1a1ae6; color: #fff; border-color: #444; }
+.results-carousel .slider-pagination .slider-page { background: #444; }
+.results-carousel .slider-pagination .slider-page.is-active { background: var(--accent-color); }
+
+/* Progressive HDR highlights. SDR and browsers without HDR CSS keep the base hover. */
+@media (dynamic-range: high) {
+  @supports (color: color(rec2100-linear 2 2 2)) and (dynamic-range-limit: no-limit) {
+    .publication-links .button.is-dark:hover,
+    .copy-bibtex-btn:hover {
+      dynamic-range-limit: no-limit;
+      background-color: color(rec2100-linear 1.5 1.5 1.5);
+      border-color: color(rec2100-linear 1.5 1.5 1.5);
+      box-shadow: 0 0 15px color(rec2100-linear 2 2 2 / .5);
+    }
+  }
+}
+
+/* Full-screen opening poster, with project information anchored at the lower left. */
+.poster-hero { position: relative; isolation: isolate; min-height: 100svh; overflow: hidden; background: #050505; }
+.poster-background, .poster-shade { position: absolute; inset: 0; z-index: -1; }
+.poster-background { background: #050505 url('../images/hero-poster.jpg') center / cover no-repeat; }
+.poster-background video { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.poster-shade { background: linear-gradient(180deg, rgb(0 0 0 / 15%) 0%, rgb(0 0 0 / 10%) 25%, rgb(0 0 0 / 88%) 100%), linear-gradient(90deg, rgb(0 0 0 / 50%), transparent 85%); }
+.poster-hero .hero-body { display: flex; align-items: flex-end; min-height: 100svh; padding: 8rem clamp(1.25rem, 5vw, 6rem) clamp(4.5rem, 9vh, 7rem); }
+.poster-hero .container { max-width: none; margin: 0; }
+.poster-hero .columns { margin: 0; }
+.poster-hero .column { padding: 0; text-align: left !important; }
+.poster-hero .publication-title { max-width: 1000px; font-size: 3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: left; background: none; color: #fff; text-wrap: balance; }
+.poster-eyebrow { margin-bottom: 1rem; color: #ddd; font-size: .75rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.poster-hero .publication-authors { max-width: 1000px; color: #d2d2d2; font-size: 1.25rem !important; margin-bottom: .75rem; }
+.poster-hero .publication-authors a { color: #fff; }
+.poster-hero .publication-authors a:hover { color: var(--accent-color); }
+.poster-hero .author-block { margin-left: 0; margin-right: .5rem; }
+.poster-hero .eql-cntrb { color: #bdbdbd; font-size: 1rem; }
+.poster-hero .eql-cntrb br { display: none; }
+.poster-hero .publication-links { justify-content: flex-start; margin-top: 1.5rem; }
+.poster-hero .publication-links .button { font-size: 1rem; }
+@media (max-width: 768px) {
+  .poster-hero .hero-body { padding: 7rem 1.25rem 5.5rem; }
+  .poster-hero .publication-title { font-size: clamp(2rem, 6vw, 3rem); }
+  .poster-shade { background: linear-gradient(180deg, #0002, #0006 25%, #000e 100%); }
+}
+@media (max-width: 480px) {
+  .poster-hero .publication-links { max-width: 360px; }
+  .poster-hero .publication-authors { font-size: 1.125rem !important; }
+}
+@media print {
+  .poster-hero, .poster-hero .hero-body { min-height: 0; }
+  .poster-background, .poster-shade { display: none; }
+  .poster-hero .publication-title, .poster-hero .publication-authors, .poster-hero .publication-authors a, .poster-eyebrow { color: #000; }
+}
+
+/* The navigation starts at the foot of the opening viewport, then sticks above content. */
+:root { --topbar-height: 60px; }
+html { scroll-padding-top: var(--topbar-height); }
+#home { scroll-margin-top: calc(-1 * var(--topbar-height)); }
+.poster-hero, .poster-hero .hero-body { min-height: calc(100svh - var(--topbar-height)); }
+.project-topbar { position: sticky; top: 0; z-index: 1000; height: var(--topbar-height); background: rgba(13, 13, 13, .8); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-block: 1px solid var(--border-color); }
+.project-topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0; height: 100%; width: var(--article-width, min(900px, calc(100% - 40px))); margin-inline: auto; font-family: var(--font-family-body); font-size: 16.2px; font-weight: 500; line-height: 1.6; }
+.project-navigation { display: flex; flex: 1; min-width: 0; align-items: center; justify-content: space-around; gap: 0; }
+.project-navigation a { display: flex; flex: 1; justify-content: center; align-items: center; min-height: 44px; color: var(--text-color); font-size: inherit; font-weight: 500; white-space: nowrap; }
+.project-navigation a:hover { color: var(--accent-color); }
+@media (max-width: 768px) {
+  .project-topbar-inner { display: flex; }
+  .project-navigation { width: auto; }
+  .project-navigation a { font-size: clamp(12px, 3.8vw, 16.2px); }
+}
+@media print {
+  .project-topbar { display: none; }
+  .poster-hero, .poster-hero .hero-body { min-height: 0; }
+}
+
+/* A single floating control travels into the reserved navigation slot on scroll. */
+.more-works-slot { width: 172px; height: 44px; flex-shrink: 0; }
+.more-works-container { position: fixed; top: 0; right: auto; left: 0; z-index: 1001; transform: translate3d(var(--works-x, calc(100vw - 204px)), var(--works-y, 32px), 0); }
+.more-works-btn { min-height: 44px; padding: .35rem .7rem; font-size: 16.2px; font-weight: 500; }
+.more-works-dropdown { top: calc(100% + .5rem); bottom: auto; }
+@media (max-width: 768px) {
+  .more-works-container { top: 0; right: auto; transform: translate3d(var(--works-x, calc(100vw - 188px)), var(--works-y, 12px), 0); }
+
+}
+
+/* Collapse the label as the floating control settles into the navigation. */
+.more-works-btn { min-width: 44px; justify-content: center; gap: calc(.5rem * (1 - var(--works-collapse, 0))); }
+.more-works-label { white-space: nowrap; overflow: hidden; max-width: calc(120px * (1 - var(--works-collapse, 0))); opacity: calc(1 - var(--works-collapse, 0)); }
+.more-works-btn .dropdown-arrow { overflow: hidden; max-width: calc(16px * (1 - var(--works-collapse, 0))); opacity: calc(1 - var(--works-collapse, 0)); }
+
+/* Once docked, show only the icon while retaining its invisible click target. */
+.more-works-container.is-docked .more-works-btn,
+.more-works-container.is-docked .more-works-btn:hover,
+.more-works-container.is-docked .more-works-btn:active {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transform: none;
+}
+.more-works-container.is-docked .more-works-btn:hover { color: var(--accent-color); }
+
+/* Let the opening video continue behind navigation; restore glass over the article. */
+.poster-hero, .poster-hero .hero-body { min-height: 100svh; }
+.project-topbar {
+  margin-top: calc(-1 * var(--topbar-height));
+  background: transparent;
+  border-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: background-color .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+}
+.project-topbar::before {
+  content: '';
+  position: absolute;
+  inset: -32px 0 0;
+  z-index: -1;
+  background: linear-gradient(transparent, rgb(0 0 0 / 35%));
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.project-topbar:not(.is-stuck) .project-navigation a { color: #eee; text-shadow: 0 1px 8px #0008; }
+.project-topbar.is-stuck {
+  background: rgba(13, 13, 13, .8);
+  border-color: var(--border-color);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.project-topbar.is-stuck::before { opacity: 0; }
+.poster-hero .hero-body { padding-bottom: calc(var(--topbar-height) + clamp(1.25rem, 3vh, 2rem)); }
+@media print {
+  .poster-hero, .poster-hero .hero-body { min-height: 0; }
+}
+
+/* Blend the navigation before it reaches the sticky position, without a threshold flash. */
+.project-topbar, .project-topbar.is-stuck {
+  background: rgb(13 13 13 / calc(.8 * var(--nav-solid, 0)));
+  border-color: rgb(51 51 51 / var(--nav-solid, 0));
+  -webkit-backdrop-filter: blur(calc(10px * var(--nav-solid, 0)));
+  backdrop-filter: blur(calc(10px * var(--nav-solid, 0)));
+  transition: none;
+}
+.project-topbar::before, .project-topbar.is-stuck::before { opacity: calc(1 - var(--nav-solid, 0)); transition: none; }
+.project-topbar .project-navigation a { color: #eee; text-shadow: 0 1px 8px #0008; }
+.more-works-btn {
+  background: rgb(13 13 13 / calc(.8 * (1 - var(--works-collapse, 0))));
+  border-color: rgb(51 51 51 / calc(1 - var(--works-collapse, 0)));
+  box-shadow: 0 4px 16px rgb(0 0 0 / calc(.3 * (1 - var(--works-collapse, 0))));
+}
+
+/* LICOA paper figures and evaluation. */
+.poster-background { background-image: url('../images/licoa-hardware.png'); background-position: center 25%; }
+.poster-shade { background: linear-gradient(180deg, #0009 0%, #0009 25%, #000f 100%), linear-gradient(90deg, #000b, #0004); }
+.poster-hero .publication-title { font-size: clamp(2rem, 3.5vw, 3rem); }
+.paper-figure { margin: 2rem auto 3rem; }
+.paper-figure img { display: block; width: 100%; background: #fff; border-radius: 12px; }
+.paper-figure figcaption, .metric-note, .paper-source { color: var(--subtle-text-color); font-size: .95rem; line-height: 1.6; margin-top: 1rem; }
+.paper-figure figcaption { max-width: 900px; margin-inline: auto; }
+.results-table { background: transparent; color: var(--text-color); margin-top: 2rem; }
+.results-table caption { color: var(--subtle-text-color); text-align: left; padding-bottom: .75rem; }
+.results-table th, .results-table td { color: var(--text-color); border-color: var(--border-color); padding: .9rem; white-space: nowrap; }
+.results-table thead th { color: var(--subtle-text-color); }
+.results-table .best-result { background: #76b90015; }
+.results-table strong { color: var(--accent-color); }
+.more-works-slot { width: 0; }

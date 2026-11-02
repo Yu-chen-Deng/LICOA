@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality</title>
+  <meta name="title" content="LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality">
+  <meta name="description" content="LICOA turns projected light into embodied action, learning to coordinate mobile robot motion, mirror steering, and projection scale from language and RGB views.">
+  <meta name="keywords" content="spatial augmented reality, optical action, mobile projection, embodied intelligence, vision-language-action, sim-to-real">
+  <meta name="author" content="Yuchen Deng, Shunkai Zhou, Ruixuan Zhu, Haibin Ling, Bingyao Huang">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="LICOA">
+  <meta property="og:title" content="LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality">
+  <meta property="og:description" content="LICOA turns projected light into embodied action, learning to coordinate mobile robot motion, mirror steering, and projection scale from language and RGB views.">
+  <meta property="og:image" content="https://Yu-chen-Deng.github.io/LICOA/static/images/licoa-teaser.png">
+  <meta property="og:image:alt" content="LICOA platform, learning interface, and real-world optical actions">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality">
+  <meta name="twitter:description" content="LICOA turns projected light into embodied action, learning to coordinate mobile robot motion, mirror steering, and projection scale from language and RGB views.">
+  <meta name="twitter:image" content="https://Yu-chen-Deng.github.io/LICOA/static/images/licoa-teaser.png">
+  <meta name="citation_title" content="LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality">
+  <meta name="citation_author" content="Yuchen Deng">
+  <meta name="citation_author" content="Shunkai Zhou">
+  <meta name="citation_author" content="Ruixuan Zhu">
+  <meta name="citation_author" content="Haibin Ling">
+  <meta name="citation_author" content="Bingyao Huang">
+  <meta name="citation_publication_date" content="2026/10/15">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.21282">
+  <meta name="citation_arxiv_id" content="2610.21282">
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="msapplication-TileColor" content="#0d0d0d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality",
+  "description": "LICOA turns projected light into embodied action, learning to coordinate mobile robot motion, mirror steering, and projection scale from language and RGB views.",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yuchen Deng",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Southwest University"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Shunkai Zhou",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Peking University"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Ruixuan Zhu",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Southwest University"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Haibin Ling",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Westlake University"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Bingyao Huang",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Southwest University"
+      }
+    }
+  ],
+  "datePublished": "2026-10-15",
+  "url": "https://arxiv.org/abs/2610.21282",
+  "identifier": "arXiv:2610.21282",
+  "image": "https://Yu-chen-Deng.github.io/LICOA/static/images/licoa-teaser.png",
+  "abstract": "Spatial augmented reality (SAR) augments physical environments with projected content, but most systems assume that the projector pose, target region, or motion path has been fixed or specified. We instead make projected light an embodied action: given a language instruction and current visual observations, a system must decide how to move and where and at what scale to place the projection. We introduce LICOA to realize this capability. Its differential-drive chassis provides room-scale approach and repositioning, while a steerable mirror with two degrees of freedom (2DoF) and projection scale provide rapid local control of the beam. A shared interface maps synchronized external and onboard RGB cameras with robot control state to physical optical actions across pretrained action models. Because instruction-conditioned optical action lacks dedicated training data and a common evaluation protocol, we construct a matched simulation embodiment and a corpus with 150 tasks and 7,500 rendered episodes, then evaluate models trained only on this corpus in previously unseen real-world environments. Across 480 complete closed-loop real-world execution trials (rollouts) on 12 tasks, the best adapted action model achieves a 57.50% success rate and 40.64% success weighted by path length, compared with 8.33% and 5.15% for the same architecture trained from scratch. A further 150 real-world ablation rollouts support the need for both camera views and coordinated control of the chassis and mirror. These results establish a physical platform, shared perception and optical action interface, corpus, and real-world evaluation protocol for treating projected light as an embodied action.",
+  "isAccessibleForFree": true
+}
+  </script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" aria-label="Resources" title="Paper resources"><i class="fas fa-flask"></i><span class="more-works-label">Resources</span><i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header"><button class="close-btn" onclick="toggleMoreWorks()" aria-label="Close Resources"><i class="fas fa-times"></i></button></div>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/2610.21282" class="work-item" target="_blank" rel="noopener noreferrer"><div class="work-info"><h5>LICOA on arXiv</h5><p>Paper, version history, and source files.</p></div><i class="fas fa-external-link-alt"></i></a>
+        <a href="https://arxiv.org/html/2610.21282v1" class="work-item" target="_blank" rel="noopener noreferrer"><div class="work-info"><h5>Full paper &amp; supplementary material</h5><p>Hardware, simulation, training, and evaluation details.</p></div><i class="fas fa-external-link-alt"></i></a>
+      </div>
+    </div>
+  </div>
+
+<main id="main-content">
+
+<section class="hero publication-header poster-hero" id="home" aria-labelledby="project-title">
+  <div class="poster-background" aria-hidden="true"></div>
+  <div class="poster-shade" aria-hidden="true"></div>
+  <div class="hero-body"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column has-text-centered">
+    <h1 id="project-title" class="title is-1 publication-title">LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality</h1>
+    <div class="is-size-5 publication-authors">
+      <span class="author-block"><a href="https://yuchendeng.com/" target="_blank" rel="noopener noreferrer">Yuchen Deng</a><sup>1</sup>,</span>
+      <span class="author-block"><a href="https://github.com/ShunkaiZhou" target="_blank" rel="noopener noreferrer">Shunkai Zhou</a><sup>2</sup>,</span>
+      <span class="author-block">Ruixuan Zhu<sup>1</sup>,</span>
+      <span class="author-block"><a href="https://haibinling.github.io/" target="_blank" rel="noopener noreferrer">Haibin Ling</a><sup>3</sup>,</span>
+      <span class="author-block"><a href="https://bingyaohuang.github.io/" target="_blank" rel="noopener noreferrer">Bingyao Huang</a><sup>1,†</sup></span>
+    </div>
+    <div class="is-size-5 publication-authors">
+      <span class="author-block"><sup>1</sup>Southwest University</span>
+      <span class="author-block"><sup>2</sup>Peking University</span>
+      <span class="author-block"><sup>3</sup>Westlake University</span>
+      <span class="eql-cntrb"><sup>†</sup>Corresponding author</span>
+    </div>
+    <div class="publication-links">
+<span class="link-block"><a href="https://arxiv.org/pdf/2610.21282" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
+<span class="link-block"><a href="https://arxiv.org/abs/2610.21282" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a></span>
+<span class="link-block"><a href="https://github.com/Yu-chen-Deng/LICOA" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>GitHub</span></a></span>
+    </div>
+  </div></div></div></div>
+</section>
+<header class="project-topbar"><div class="project-topbar-inner">
+  <nav class="project-navigation" aria-label="Section navigation"><a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#BibTeX">Citation</a></nav>
+  <div class="more-works-slot" aria-hidden="true"></div>
+</div></header>
+
+<section class="section hero is-light" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Spatial augmented reality (SAR) augments physical environments with projected content, but most systems assume that the projector pose, target region, or motion path has been fixed or specified. We instead make projected light an embodied action: given a language instruction and current visual observations, a system must decide how to move and where and at what scale to place the projection. We introduce LICOA to realize this capability. Its differential-drive chassis provides room-scale approach and repositioning, while a steerable mirror with two degrees of freedom (2DoF) and projection scale provide rapid local control of the beam. A shared interface maps synchronized external and onboard RGB cameras with robot control state to physical optical actions across pretrained action models. Because instruction-conditioned optical action lacks dedicated training data and a common evaluation protocol, we construct a matched simulation embodiment and a corpus with 150 tasks and 7,500 rendered episodes, then evaluate models trained only on this corpus in previously unseen real-world environments. Across 480 complete closed-loop real-world execution trials (rollouts) on 12 tasks, the best adapted action model achieves a 57.50% success rate and 40.64% success weighted by path length, compared with 8.33% and 5.15% for the same architecture trained from scratch. A further 150 real-world ablation rollouts support the need for both camera views and coordinated control of the chassis and mirror. These results establish a physical platform, shared perception and optical action interface, corpus, and real-world evaluation protocol for treating projected light as an embodied action.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="video">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Video</h2>
+    <video controls playsinline preload="metadata" aria-label="LICOA demonstration video">
+      <source src="./static/videos/demo.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="./static/videos/demo.mp4">Download the video</a>.
+    </video>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{Deng2026LICOA,
+      title={LICOA: Learning Instruction-Conditioned Optical Actions for Mobile Spatial Augmented Reality}, 
+      author={Yuchen Deng and Shunkai Zhou and Ruixuan Zhu and Haibin Ling and Bingyao Huang},
+      year={2026},
+      eprint={2610.21282},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2610.21282}, 
+}</code></pre>
+    </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Based on the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> and <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>, with design modifications by <a href="https://yuchendeng.com/" target="_blank" rel="noopener noreferrer">Yuchen Deng</a>. Licensed under <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
